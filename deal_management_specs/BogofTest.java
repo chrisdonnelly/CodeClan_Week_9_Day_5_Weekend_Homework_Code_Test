@@ -27,6 +27,10 @@ public class BogofTest {
   public void canCalculateBogof() {
     basket.addItemToBasket(wine1);
     basket.addItemToBasket(wine2);
+    basket.updateTotal();
+    bogof1.calculateDiscount(basket);
+    bogof1.applyDiscount(basket);
+    assertEquals(5, basket.getTotal(), 0.1);
   }
 
 }
