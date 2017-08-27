@@ -10,7 +10,7 @@ public class LoyaltyDiscount implements Discounts {
     if (customer.loyaltyCardHolder == true) {
       loyaltyDiscount = 0.02;
     }
-   return basket.total - (basket.total * loyaltyDiscount);
+   return basket.total -= (basket.total * loyaltyDiscount);
  }
 
 }

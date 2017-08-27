@@ -42,5 +42,23 @@ public class LoyaltyDiscountTest {
     assertEquals(4.90, basket.getTotal(), 0.1);
   }
 
+  @Test
+  public void canApplyLoyaltyDiscountToComplexBasket(){
+    basket.addItemToBasket(wine1);
+    basket.addItemToBasket(wine2);
+    basket.addItemToBasket(wine3);
+    basket.addItemToBasket(food1);
+    basket.addItemToBasket(food2);
+    basket.addItemToBasket(food3);
+    basket.updateTotal();
+    bogof1.calculateDiscount(basket);
+    bogof1.applyDiscount(basket);
+    tenPercent.calculateDiscount(basket);
+    loyalty.calculateDiscount(basket, customer);
+    assertEquals(20.99, basket.getTotal(), 0.1);
+  }
+
+
+
 }
 
