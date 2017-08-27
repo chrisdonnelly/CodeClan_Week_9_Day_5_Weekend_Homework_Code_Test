@@ -6,10 +6,12 @@ import java.util.*;
 
 public class ShoppingBasket {
 
+  public Customer customer;
   public ArrayList<Item> items;
   public double total;
 
-  public ShoppingBasket() {
+  public ShoppingBasket(Customer customer) {
+    this.customer = customer;
     this.items = new ArrayList<Item>();
     this.total = 0;
   }

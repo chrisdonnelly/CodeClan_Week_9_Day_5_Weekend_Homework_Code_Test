@@ -15,10 +15,12 @@ public class TenPercentDiscountTest {
   Wine wine3;
   Bogof bogof1;
   TenPercentDiscount tenPercent;
+  Customer customer;
 
   @Before
   public void before() {
-    basket = new ShoppingBasket();
+    customer = new Customer("Chris", "Donnelly", true);
+    basket = new ShoppingBasket(customer);
     food1 = new Food("Apple", "Fruit", 0.80);
     food2 = new Food("Steak", "Meat", 6.50);
     food3 = new Food("Steak", "Meat", 6.50);

@@ -13,10 +13,12 @@ public class BogofTest {
   Wine wine2;
   Wine wine3;
   Bogof bogof1;
+  Customer customer;
 
   @Before
   public void before() {
-    basket = new ShoppingBasket();
+    customer = new Customer("Chris", "Donnelly", true);
+    basket = new ShoppingBasket(customer);
     food1 = new Food("Apple", "Fruit", 0.80);
     food2 = new Food("Steak", "Meat", 6.50);
     wine1 = new Wine("Emulsion Remover", "Shiraz", 5.00);

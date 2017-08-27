@@ -16,10 +16,12 @@ public class LoyaltyDiscountTest {
   Bogof bogof1;
   TenPercentDiscount tenPercent;
   LoyaltyDiscount loyalty;
+  Customer customer;
 
   @Before
   public void before() {
-    basket = new ShoppingBasket();
+    customer = new Customer("Chris", "Donnelly", true);
+    basket = new ShoppingBasket(customer);
     food1 = new Food("Apple", "Fruit", 0.80);
     food2 = new Food("Steak", "Meat", 6.50);
     food3 = new Food("Steak", "Meat", 6.50);
@@ -29,13 +31,14 @@ public class LoyaltyDiscountTest {
     bogof1 = new Bogof("Shiraz");
     tenPercent = new TenPercentDiscount();
     loyalty = new LoyaltyDiscount();
+   
   }
 
   @Test
   public void canApplyLoyaltyDiscountToSingleItem() {
     basket.addItemToBasket(wine1);
     basket.updateTotal();
-    tenPercent(basket);
+    loyalty.calculateDiscount(basket, customer);
     assertEquals(4.90, basket.getTotal(), 0.1);
   }
 
