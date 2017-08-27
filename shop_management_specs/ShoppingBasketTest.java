@@ -8,12 +8,16 @@ public class ShoppingBasketTest {
   ShoppingBasket basket;
   Food food1;
   Food food2;
+  Shiraz shiraz1;
+  Shiraz shiraz2;
 
   @Before
   public void before() {
     basket = new ShoppingBasket();
     food1 = new Food("Apple", 0.80);
     food2 = new Food("Steak", 6.50);
+    shiraz1 = new Shiraz("Emulsion Remover", 5);
+    shiraz2 = new Shiraz("Grape Posion", 5);
   }
 
   @Test
@@ -53,6 +57,11 @@ public class ShoppingBasketTest {
     basket.addItemToBasket(food2);
     basket.updateTotal();
     assertEquals(7.30, basket.getTotal(), 0.1);
+  }
+
+  @Test
+  public void canCalculateBogof() {
+    assertEquals(5, basket.getTotal(), 0.1);
   }
 
 

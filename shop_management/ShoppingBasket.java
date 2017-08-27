@@ -41,6 +41,10 @@ public class ShoppingBasket {
     this.total = subtotal;
   }
 
+  public void calculateBogof() {
+    
+  }
+
 
 
 }
