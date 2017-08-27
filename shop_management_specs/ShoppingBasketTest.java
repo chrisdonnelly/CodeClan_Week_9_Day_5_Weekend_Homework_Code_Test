@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 import org.junit.*;
 import shop_management.*;
 import item_management.*;
+import behaviours.*;
 
 public class ShoppingBasketTest {
 
