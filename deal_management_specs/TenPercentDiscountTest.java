@@ -44,5 +44,14 @@ public class TenPercentDiscountTest {
     assertEquals(21.42, basket.getTotal(), 0.1);
   }
 
+  @Test
+  public void discountNotAppliedToBasketUnder20(){
+    basket.addItemToBasket(food1);
+    basket.addItemToBasket(food2);
+    basket.addItemToBasket(food3);
+    basket.updateTotal();
+    tenPercent.calculateDiscount(basket);
+    assertEquals(13.80, basket.getTotal(), 0.1);
+  }
 }
 
