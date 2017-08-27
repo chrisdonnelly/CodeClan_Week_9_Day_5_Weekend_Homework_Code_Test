@@ -2,23 +2,22 @@ import static org.junit.Assert.*;
 import org.junit.*;
 import shop_management.*;
 import item_management.*;
-import behaviours.*;
 
 public class ShoppingBasketTest {
 
   ShoppingBasket basket;
   Food food1;
   Food food2;
-  Shiraz shiraz1;
-  Shiraz shiraz2;
+  Wine wine1;
+  Wine wine2;
 
   @Before
   public void before() {
     basket = new ShoppingBasket();
-    food1 = new Food("Apple", 0.80);
-    food2 = new Food("Steak", 6.50);
-    shiraz1 = new Shiraz("Emulsion Remover", 5.00);
-    shiraz2 = new Shiraz("Grape Posion", 5.00);
+    food1 = new Food("Apple", "Fruit", 0.80);
+    food2 = new Food("Steak", "Meat", 6.50);
+    wine1 = new Wine("Emulsion Remover", "Shiraz", 5.00);
+    wine2 = new Wine("Grape Posion", "Shiraz", 5.00);
   }
 
   @Test
@@ -58,14 +57,6 @@ public class ShoppingBasketTest {
     basket.addItemToBasket(food2);
     basket.updateTotal();
     assertEquals(7.30, basket.getTotal(), 0.1);
-  }
-
-  @Test
-  public void canCalculateBogof() {
-    basket.addItemToBasket(shiraz1);
-    basket.addItemToBasket(shiraz2);
-    basket.updateTotal();
-    assertEquals(5, basket.getTotal(), 0.1);
   }
 
 }

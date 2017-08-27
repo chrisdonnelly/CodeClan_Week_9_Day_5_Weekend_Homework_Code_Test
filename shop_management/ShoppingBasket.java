@@ -1,6 +1,6 @@
 package shop_management;
 import item_management.*;
-import behaviours.*;
+import deal_management.*;
 import java.util.*;
 
 
@@ -41,17 +41,5 @@ public class ShoppingBasket {
     }
     this.total = subtotal;
   }
-
-  public void calculateBogof() {
-    int bogofCount = 0;
-    for (Bogof item : this.items) {
-      bogofCount += 1;
-    }
-    if bogofCount % 2 = 0
-      then 
-
-  }
-
-
 
 }

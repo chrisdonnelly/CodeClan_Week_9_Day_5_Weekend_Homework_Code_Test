@@ -1,27 +1,31 @@
-package deals;
+package deal_management;
+import item_management.*;
+import shop_management.*;
 import behaviours.*;
 
 public class Bogof implements Discounts {
 
-  public Item bogofItem;
+  public String bogofItem;
   public double bogofItemDiscount;
   
-  public Bogof(Item bogofItem) {
-    this.Item = bogofItem;
-    this.bogofItemDiscount = 0
+  public Bogof(String bogofItem) {
+    this.bogofItem = bogofItem;
+    this.bogofItemDiscount = 0;
   }
 
-  public double calculateDiscount(Shopping Basket basket, Item bogofItem) {
-    itemCount = 0
-    itemSubTotal = 0
-    for (bogofItem : basket.items) {
-      item_count += 1;
+  public void calculateDiscount(ShoppingBasket basket) {
+    int itemCount = 0;
+    double itemPrice = 0;
+    double itemSubTotal = 0;
+    for (Item item : basket.items) {
+      itemCount += 1;
+      itemPrice = item.price;
       itemSubTotal += item.price;
     }
-    if item_count % 2 = 0 then
-
-
-
+    if (itemCount % 2 == 0)
+      this.bogofItemDiscount = itemSubTotal / 2;
+    else if (itemCount % 2 != 0)
+      this.bogofItemDiscount = itemSubTotal / 2 + itemPrice;
   }
 
 }
