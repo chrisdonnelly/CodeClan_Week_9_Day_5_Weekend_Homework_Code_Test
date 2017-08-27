@@ -18,7 +18,7 @@ public class Bogof implements Discounts {
     double itemPrice = 0;
     double itemSubTotal = 0;
     for (Item item : basket.items) {
-      if (item.type == this.bogofItem)
+      if (item.type.equals(this.bogofItem))
       itemCount += 1;
       itemPrice = item.price;
       itemSubTotal += item.price;
@@ -26,7 +26,7 @@ public class Bogof implements Discounts {
     if (itemCount % 2 == 0)
       this.bogofItemDiscount = itemSubTotal / 2;
     else if (itemCount % 2 != 0)
-      this.bogofItemDiscount = itemSubTotal / 2 + itemPrice;
+      this.bogofItemDiscount = (itemSubTotal - itemPrice) / 2;
   }
 
   public double applyDiscount(ShoppingBasket basket) {

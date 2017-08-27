@@ -11,6 +11,7 @@ public class BogofTest {
   Food food2;
   Wine wine1;
   Wine wine2;
+  Wine wine3;
   Bogof bogof1;
 
   @Before
@@ -20,6 +21,7 @@ public class BogofTest {
     food2 = new Food("Steak", "Meat", 6.50);
     wine1 = new Wine("Emulsion Remover", "Shiraz", 5.00);
     wine2 = new Wine("Grape Posion", "Shiraz", 5.00);
+    wine3 = new Wine("Lovely Juice", "Shiraz", 5.00);
     bogof1 = new Bogof("Shiraz");
   }
 
@@ -31,6 +33,16 @@ public class BogofTest {
     bogof1.calculateDiscount(basket);
     bogof1.applyDiscount(basket);
     assertEquals(5, basket.getTotal(), 0.1);
+  }
+
+  @Test public void canCalculateBogofInMixedBasket() {
+    basket.addItemToBasket(wine1);
+    basket.addItemToBasket(wine2);
+    basket.addItemToBasket(wine3);
+    basket.updateTotal();
+    bogof1.calculateDiscount(basket);
+    bogof1.applyDiscount(basket);
+    assertEquals(10, basket.getTotal(), 0.1);
   }
 
 }
