@@ -47,8 +47,30 @@ public class ShoppingBasket {
     this.total = subtotal;
   }
 
-  public double getFinalTotal() {
-    return 0;
+  public void addDiscount(Discount discount){
+    this.discounts.add(discount);
   }
 
+  public double getFinalTotal() {
+    this.updateTotal();
+    for (Discount discount : discounts) {
+      if (discount.getClass() == Bogof.class) {
+        Bogof discount1 = (Bogof) discount;
+        discount1.calculateDiscount(this);
+        discount1.applyDiscount(this);
+      }
+      else if (discount.getClass() == TenPercentDiscount.class) {
+        TenPercentDiscount discount2 = (TenPercentDiscount) discount;
+        discount2.calculateDiscount(this);
+      }
+      else if (discount.getClass() == LoyaltyDiscount.class) {
+        LoyaltyDiscount discount3  = (LoyaltyDiscount) discount;
+        discount3.calculateDiscount(this, this.customer);
+      }
+      else {
+        return this.total;
+      }
+    }
+    return this.total;
+  }
 }

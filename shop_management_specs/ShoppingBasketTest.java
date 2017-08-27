@@ -86,6 +86,9 @@ public class ShoppingBasketTest {
 
   @Test
   public void canGetFinalTotal() {
+    basket.addDiscount(bogof1);
+    basket.addDiscount(tenPercent);
+    basket.addDiscount(loyalty);
     basket.addItemToBasket(wine1);
     basket.addItemToBasket(wine2);
     basket.addItemToBasket(wine3);
