@@ -59,4 +59,14 @@ public class ShoppingBasketTest {
     assertEquals(7.30, basket.getTotal(), 0.1);
   }
 
+  @Test 
+  public void canUpdateTotalOnMixedBasket(){
+    basket.addItemToBasket(food1);
+    basket.addItemToBasket(food2);
+    basket.addItemToBasket(wine1);
+    basket.addItemToBasket(wine2);
+    basket.updateTotal();
+    assertEquals(17.30, basket.getTotal(), 0.1);
+  }
+
 }
