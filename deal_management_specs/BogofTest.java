@@ -35,7 +35,8 @@ public class BogofTest {
     assertEquals(5, basket.getTotal(), 0.1);
   }
 
-  @Test public void canCalculateBogofOddNoOfItems() {
+  @Test 
+  public void canCalculateBogofOddNoOfItems() {
     basket.addItemToBasket(wine1);
     basket.addItemToBasket(wine2);
     basket.addItemToBasket(wine3);
@@ -45,7 +46,8 @@ public class BogofTest {
     assertEquals(10, basket.getTotal(), 0.1);
   }
 
-  @Test public void canCalculateBogofMixedBasket() {
+  @Test 
+  public void canCalculateBogofMixedBasket() {
     basket.addItemToBasket(wine1);
     basket.addItemToBasket(wine2);
     basket.addItemToBasket(wine3);
@@ -56,5 +58,15 @@ public class BogofTest {
     bogof1.applyDiscount(basket);
     assertEquals(17.3, basket.getTotal(), 0.1);
   }
+
+  @Test
+  public void bogofNotAppliedToSingleItem() {
+    basket.addItemToBasket(wine1);
+    basket.updateTotal();
+    bogof1.calculateDiscount(basket);
+    bogof1.applyDiscount(basket);
+    assertEquals(5, basket.getTotal(), 0.1);
+  }
+
 
 }
