@@ -7,11 +7,14 @@ public class ShoppingBasketTest {
 
   ShoppingBasket basket;
   Food food1;
+  Food food2;
 
   @Before
   public void before() {
     basket = new ShoppingBasket();
     food1 = new Food("Apple", 0.80);
+    food2 = new Food("Steak", 6.50);
+
   }
 
   @Test
@@ -29,6 +32,14 @@ public class ShoppingBasketTest {
   public void canRemoveItemFromBasket() {
     basket.addItemToBasket(food1);
     basket.removeItem(food1);
+    assertEquals(0, basket.checkNoOfItems());
+  }
+
+  @Test
+  public void canClearBasket() {
+    basket.addItemToBasket(food1);
+    basket.addItemToBasket(food2);
+    basket.emptyBasket();
     assertEquals(0, basket.checkNoOfItems());
   }
   

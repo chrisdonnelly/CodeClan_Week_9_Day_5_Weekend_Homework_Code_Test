@@ -25,4 +25,8 @@ public class ShoppingBasket {
     this.items.remove(item);
   }
 
+  public void emptyBasket() {
+    this.items.clear();
+  }
+
 }
