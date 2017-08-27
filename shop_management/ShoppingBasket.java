@@ -29,4 +29,18 @@ public class ShoppingBasket {
     this.items.clear();
   }
 
+  public double getTotal() {
+    return this.total;
+  }
+
+  public void updateTotal() {
+    double subtotal = 0;
+    for (Item item : this.items) {
+      subtotal += item.price;
+    }
+    this.total = subtotal;
+  }
+
+
+
 }
