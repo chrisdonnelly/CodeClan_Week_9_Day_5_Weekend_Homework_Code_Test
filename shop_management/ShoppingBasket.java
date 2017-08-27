@@ -17,4 +17,8 @@ public class ShoppingBasket {
     return this.items.size();
   }
 
+  public void addItemToBasket(Item item) {
+    this.items.add(item);
+  }
+
 }

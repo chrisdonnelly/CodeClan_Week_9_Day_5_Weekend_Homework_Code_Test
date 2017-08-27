@@ -6,15 +6,23 @@ import item_management.*;
 public class ShoppingBasketTest {
 
   ShoppingBasket basket;
+  Food food1;
 
   @Before
   public void before() {
     basket = new ShoppingBasket();
+    food1 = new Food("Apple", 0.80);
   }
 
   @Test
   public void canCheckNoOfItems() {
     assertEquals(0, basket.checkNoOfItems());
+  }
+
+  @Test
+  public void canAddItemToBasket() {
+    basket.addItemToBasket(food1);
+    assertEquals(1, basket.checkNoOfItems());
   }
   
 }
