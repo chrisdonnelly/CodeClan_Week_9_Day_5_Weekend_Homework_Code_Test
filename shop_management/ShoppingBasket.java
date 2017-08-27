@@ -43,6 +43,12 @@ public class ShoppingBasket {
   }
 
   public void calculateBogof() {
+    int bogofCount = 0;
+    for (Bogof item : this.items) {
+      bogofCount += 1;
+    }
+    if bogofCount % 2 = 0
+      then 
 
   }
 

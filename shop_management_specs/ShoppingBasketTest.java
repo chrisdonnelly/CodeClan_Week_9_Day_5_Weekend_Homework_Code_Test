@@ -17,8 +17,8 @@ public class ShoppingBasketTest {
     basket = new ShoppingBasket();
     food1 = new Food("Apple", 0.80);
     food2 = new Food("Steak", 6.50);
-    shiraz1 = new Shiraz("Emulsion Remover", 5);
-    shiraz2 = new Shiraz("Grape Posion", 5);
+    shiraz1 = new Shiraz("Emulsion Remover", 5.00);
+    shiraz2 = new Shiraz("Grape Posion", 5.00);
   }
 
   @Test
@@ -62,9 +62,10 @@ public class ShoppingBasketTest {
 
   @Test
   public void canCalculateBogof() {
+    basket.addItemToBasket(shiraz1);
+    basket.addItemToBasket(shiraz2);
+    basket.updateTotal();
     assertEquals(5, basket.getTotal(), 0.1);
   }
 
-
-  
 }
