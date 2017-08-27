@@ -77,8 +77,7 @@ public class LoyaltyDiscountTest {
     loyalty.calculateDiscount(basket2, customer2);
     assertEquals(21.42, basket2.getTotal(), 0.1);
   }
-
-
-
+  
 }
+
 

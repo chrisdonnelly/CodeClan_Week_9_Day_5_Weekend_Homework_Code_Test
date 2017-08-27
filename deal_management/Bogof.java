@@ -3,7 +3,7 @@ import item_management.*;
 import shop_management.*;
 import behaviours.*;
 
-public class Bogof implements Discounts {
+public class Bogof implements Discount {
 
   public String bogofItem;
   public double bogofItemDiscount;

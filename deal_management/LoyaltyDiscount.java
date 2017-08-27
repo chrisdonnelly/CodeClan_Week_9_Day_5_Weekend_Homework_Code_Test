@@ -3,7 +3,7 @@ import item_management.*;
 import shop_management.*;
 import behaviours.*;
 
-public class LoyaltyDiscount implements Discounts {
+public class LoyaltyDiscount implements Discount {
 
   public double calculateDiscount(ShoppingBasket basket, Customer customer) {
     double loyaltyDiscount = 0;
