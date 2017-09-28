@@ -1,4 +1,4 @@
-# CodeClan_Week_9_Day_5_Weekend_Homework_Code_Test
+# Solution_for_a_Typical_Shopping_Basket_Code_Test
 
 My answer to a typical code test one might be asked to complete by a potential employer.
 
